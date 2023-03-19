@@ -58,6 +58,16 @@ app.post('/api/todo', (request, response)=>{
     response.json(result)
 })
 
+app.delete('/api/todo/:id', (request, response) =>{
+    const deleteId = request.params.id;
+    function remove(list, id){
+        return list.filter(eve, eve.id !== id )
+
+    } 
+    const result = remove(todosList, deleteId)
+    response.json(result)
+})
+
 app.listen(PORT, ()=>{
     console.log(`Server on port ${PORT} started!`)
 })
